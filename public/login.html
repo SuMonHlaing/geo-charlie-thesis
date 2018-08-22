@@ -59,7 +59,6 @@
     <!-- Firebase-UI -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-    
  </head>
  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -73,9 +72,9 @@
           <a href="index.html" class="is-active mdl-navigation__link"><i class="small material-icons">home</i></a>
           <a href="author.html" class="mdl-navigation__link"><i class="small material-icons">person</i></a>
           <a href="bachelor.html" class="mdl-navigation__link"><i class="small material-icons">school</i></a>
-          <a href="year.html" class="mdl-navigation__link"><i class="small material-icons">today</i></a> 
+          <a href="year.html" class="mdl-navigation__link"><i class="small material-icons">today</i></a>
           <a href="publisher.html" class="mdl-navigation__link"><i class="small material-icons">bookmarks</i></a>
-          <a href="login.html" class="mdl-navigation__link"><i class="small material-icons">lock_open</i></a>
+          <a href="login.html" class="mdl-navigation__link"><i class="small material-icons">vpn_lock</i></a>
           </nav> 
         </div>
       </header>
@@ -88,57 +87,16 @@
           <a class="mdl-navigation__link" href="bachelor.html"><i class="small material-icons" style="padding-right: 20px">school</i>Bachelor</a>
           <a class="mdl-navigation__link" href="year.html"><i class="small material-icons" style="padding-right: 20px">today</i>Years</a>
           <a class="mdl-navigation__link" href="publisher.html"><i class="small material-icons" style="padding-right: 20px">bookmarks</i>Publisher</a>
-          <a class="mdl-navigation__link" href="login.html"><i class="small material-icons" style="padding-right: 20px">lock_open</i>Login</a>
+          <a class="mdl-navigation__link" href="login.html"><i class="small material-icons" style="padding-right: 20px">vpn_lock</i>Login</a>
         </nav>
         </div>
 
-       <main class="mdl-layout__content" style="margin-left: auto; margin-right: auto">
-       <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-    <div class="page-content"><!-- Your content goes here -->
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internID">
-        <label class="mdl-textfield__label" for="sample3">Intern ID...</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internName">
-        <label class="mdl-textfield__label" for="sample3">Student Name...</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internDegree">
-        <label class="mdl-textfield__label" for="sample4">Degree ..</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internSupervisor">
-        <label class="mdl-textfield__label" for="sample4">Supervisor ...</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internTitle">
-        <label class="mdl-textfield__label" for="sample4">Title...</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internAbstract">
-        <label class="mdl-textfield__label" for="sample4">Abstract...</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="internYear">
-        <label class="mdl-textfield__label" for="sample4">Year...</label>
-      </div>
-      <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" name="submit" onclick="internsApp.Create()">Submit</button>
-      <button onclick="logOut()">Logout</button>
-    </form>
-    </div>
-    </div>
-  </div>
-</div>
-</section>
-</main>
-      <script src="js/admin.js"></script>
-      <script src="js/lib.js"></script>
-      <script src="admin.js"></script>
+      <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here -->
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+       </div>
+       <script src="js/login.js"></script>
 
           <footer class="mdl-mega-footer">      
             <div class="mdl-mega-footer__middle-section">
@@ -194,7 +152,7 @@
             </ul>
             </div>
           </footer>             
-      
+      </main>
 
      <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <!-- build:js scripts/main.min.js -->
