@@ -5,11 +5,11 @@ $(document).ready(function(){
 		var degree = snap.child("Degree").val();
 		var name = snap.child("Student_name").val();
 		var supervisor= snap.child("Supervisor").val();
-		var title = snap.child("Thesis Title").val();
+		var title = snap.child("Thesis_Title").val();
 		var year = snap.child("Year").val();
 		$("#interns").append("<tr><td >"+ name + "</td><td>" + degree + "</td><td>" + supervisor
 			 + "</td><td>" + year + "</td><td>" + title + "</td><td>" + project + "</td></tr>");
-		$("#authors").append("<div class=demo-list-action mdl-list><div class=mdl-list__item><span class=mdl-list__item-primary-content><i class=material-icons mdl-list__item-avatar style=padding-right:20px;>person</i><span>"+ name +"</span></span><a class=mdl-list__item-secondary-action href=authordetail.html><i class=material-icons>star</i></a></div></div>");
+		$("#authors").append("<div class=demo-list-action mdl-list><div class=mdl-list__item><span class=mdl-list__item-primary-content><i class=material-icons mdl-list__item-avatar style=padding-right:20px;>person</i><span>"+ name +"</span></span><a class=mdl-list__item-secondary-action href=authordetail.html><i class=material-icons>arrow_forward</i></a></div></div>");
 	});
 
 	$('#internGetInfo').bind('click', function () {
@@ -21,13 +21,21 @@ $(document).ready(function(){
 			var degree = snapshot.child("Degree").val();
 			var name = snapshot.child("Student_name").val();
 			var supervisor= snapshot.child("Supervisor").val();
-			var title = snapshot.child("Thesis Title").val();
+			var title = snapshot.child("Thesis_Title").val();
 			var year = snapshot.child("Year").val();
 			//$("#internNameResult").val(name);
 			//$("#internIDResult").val(title);
 			//$("#internTeamResult").val(year);
-			$("#internsNameResult").append("<tr><td >"+ name + "</td><td>" + degree + "</td><td>" + supervisor
+			$("#internsNameResult").html("<tr><td>"+ name + "</td><td>" + degree + "</td><td>" + supervisor
 			 	+ "</td><td>" + year + "</td><td>" + title + "</td><td>" + project + "</td></tr>");
+			$("#internsNameResult2").html("<div class=mdl-card__supporting-text><h5 style=color:green;><b><i>Author Name : </b> "+ name + "</i></h5>" +
+				"<h5 style=color:green;><b><i>Degree : </b>"+ degree + "</i></h5>" +
+				"<h5 style=color:green;><b><i>Supervisor Name : </b>"+ supervisor + "</i></h5>" +
+				"<h5 style=color:green;><b><i>Year : </b>"+ year + "</i></h5>" +
+				"<h5 style=color:green;><b><i>Thesis Title : </b>"+ title + "</i></h5>" +
+				"<h5 style=color:green;><b><i>Abstract : </b></h5><h6 style=color:green;>"+ project + "</i></h6></div>" 
+				);
+			
 		});
 	});
 	//event.preventDefault();
@@ -40,7 +48,7 @@ $(document).ready(function(){
 			var degree = Snapshot.child("Degree").val();
 			var name = Snapshot.child("Student_name").val();
 			var supervisor= Snapshot.child("Supervisor").val();
-			var title = Snapshot.child("Thesis Title").val();
+			var title = Snapshot.child("Thesis_Title").val();
 			var year = Snapshot.child("Year").val();
 			//$("#internNameResult").val(name);
 			//$("#internIDResult").val(title);
@@ -58,7 +66,7 @@ $(document).ready(function(){
 			var degree = snapShot.child("Degree").val();
 			var name = snapShot.child("Student_name").val();
 			var supervisor= snapShot.child("Supervisor").val();
-			var title = snapShot.child("Thesis Title").val();
+			var title = snapShot.child("Thesis_Title").val();
 			var year = snapShot.child("Year").val();
 			//$("#internNameResult").val(name);
 			//$("#internIDResult").val(title);
